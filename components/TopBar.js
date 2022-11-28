@@ -34,9 +34,15 @@ const styles = StyleSheet.create({
   },
   marked: {
     borderWidth: 1,
+    fontSize: 20,
+    margin: 5,
+    padding: 5,
   },
   unmarked: {
     borderWidth: 0,
+    fontSize: 20,
+    margin: 5,
+    padding: 5,
   },
 });
 
