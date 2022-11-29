@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, Button } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 
 import Settings from '../components/Settings';
 import Timer from '../components/Timer';
 import TopBar from '../components/TopBar';
 import defaultSettings from '../utils/defaultSettings';
+import MyButton from './MyButton';
 
 const Main = () => {
   const [sessionTypes, setSessionTypes] = useState(defaultSettings);
@@ -63,7 +64,11 @@ const Main = () => {
 
         <Timer seconds={currentSessionType.minutes * 60} nextSession={nextSession} />
 
-        <Button title="Settings" accessibilityLabel="Set session timers" onPress={toggleSettings} />
+        <MyButton
+          title="Settings"
+          accessibilityLabel="Set session timers"
+          onPress={toggleSettings}
+        />
       </View>
     );
   }
