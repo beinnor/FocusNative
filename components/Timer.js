@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 import { secsInMmssString } from '../utils/Helper';
+import MyButton from './MyButton';
 
 const Timer = ({ seconds, nextSession }) => {
   const [secondsLeft, setSecondsLeft] = useState(seconds);
@@ -48,17 +49,17 @@ const Timer = ({ seconds, nextSession }) => {
 
   const startBtnJSX = () => {
     return (
-      <Button title="Start" accessibilityLabel="Start session" onPress={() => setPaused(false)} />
+      <MyButton title="Start" accessibilityLabel="Start session" onPress={() => setPaused(false)} />
     );
   };
 
   const skipBtnJSX = () => {
-    return <Button title="skip" accessibilityLabel="skip session time" onPress={() => skip()} />;
+    return <MyButton title="skip" accessibilityLabel="skip session time" onPress={() => skip()} />;
   };
 
   const stopBtnJSX = () => {
     return (
-      <Button title="Stop" accessibilityLabel="Stop session" onPress={() => setPaused(true)} />
+      <MyButton title="Stop" accessibilityLabel="Stop session" onPress={() => setPaused(true)} />
     );
   };
 

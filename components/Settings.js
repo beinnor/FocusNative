@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, Button, TextInput } from 'react-native';
+import { View, StyleSheet, Text, TextInput } from 'react-native';
 
 import defaultSettings from '../utils/defaultSettings';
+import MyButton from './MyButton';
 
 const Settings = ({ toggleSettings, sessionTypes, updateSettings }) => {
   const [focusTime, setFocusTime] = useState(sessionTypes.focus.minutes);
@@ -55,9 +56,9 @@ const Settings = ({ toggleSettings, sessionTypes, updateSettings }) => {
       <View style={styles.divider} />
 
       <View style={styles.horizontalView}>
-        <Button title="Defaults" accessibilityLabel="Reset to defaults" onPress={reset} />
+        <MyButton title="Defaults" accessibilityLabel="Reset to defaults" onPress={reset} />
 
-        <Button title="Save" accessibilityLabel="Save settings" onPress={() => save()} />
+        <MyButton title="Save" accessibilityLabel="Save settings" onPress={() => save()} />
       </View>
     </View>
   );
