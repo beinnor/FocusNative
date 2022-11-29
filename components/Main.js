@@ -33,19 +33,11 @@ const Main = () => {
   };
 
   const updateSettings = (focusTime, shortBreakTime, longBreakTime) => {
-    const tmp = {
-      focus: { name: 'focus', text: 'Focus', minutes: focusTime },
-      shortBreak: {
-        name: 'shortbreak',
-        text: 'Short break',
-        minutes: shortBreakTime,
-      },
-      longBreak: {
-        name: 'longbreak',
-        text: 'Long break',
-        minutes: longBreakTime,
-      },
-    };
+    const tmp = defaultSettings;
+
+    tmp.focus.minutes = focusTime;
+    tmp.shortBreak.minutes = shortBreakTime;
+    tmp.longBreak.minutes = longBreakTime;
 
     setSessionTypes(tmp);
     setCurrentSessionType(tmp[currentSessionType.name]);
