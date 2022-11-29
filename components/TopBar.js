@@ -11,13 +11,13 @@ const TopBar = ({ type }) => {
         <Text style={styles.unmarked}>Focus</Text>
       )}
 
-      {type === 'shortbreak' ? (
+      {type === 'shortBreak' ? (
         <Text style={styles.marked}>Short Break</Text>
       ) : (
         <Text style={styles.unmarked}>Short Break</Text>
       )}
 
-      {type === 'longbreak' ? (
+      {type === 'longBreak' ? (
         <Text style={styles.marked}>Long Break</Text>
       ) : (
         <Text style={styles.unmarked}>Long Break</Text>
