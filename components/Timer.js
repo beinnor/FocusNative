@@ -37,6 +37,10 @@ const Timer = ({ seconds, nextSession }) => {
     setRestart(false);
   };
 
+  const skip = () => {
+    finished();
+  };
+
   const finished = () => {
     setRestart(true);
     nextSession();
@@ -48,11 +52,8 @@ const Timer = ({ seconds, nextSession }) => {
     );
   };
 
-  const resetBtnJSX = () => {
-    if (paused && secondsLeft !== seconds)
-      return <Button title="Reset" accessibilityLabel="Reset session time" onPress={reset} />;
-
-    return <Button title="Reset" accessibilityLabel="Reset session time" disabled />;
+  const skipBtnJSX = () => {
+    return <Button title="skip" accessibilityLabel="skip session time" onPress={() => skip()} />;
   };
 
   const stopBtnJSX = () => {
@@ -67,7 +68,7 @@ const Timer = ({ seconds, nextSession }) => {
       <View>
         {paused ? startBtnJSX() : stopBtnJSX()}
 
-        {resetBtnJSX()}
+        {skipBtnJSX()}
       </View>
     </View>
   );
