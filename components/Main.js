@@ -37,12 +37,12 @@ const Main = () => {
       focus: { name: 'focus', text: 'Focus', minutes: focusTime },
       shortBreak: {
         name: 'shortbreak',
-        text: 'Take a short break',
+        text: 'Short break',
         minutes: shortBreakTime,
       },
       longBreak: {
         name: 'longbreak',
-        text: 'Take a long break',
+        text: 'Long break',
         minutes: longBreakTime,
       },
     };
