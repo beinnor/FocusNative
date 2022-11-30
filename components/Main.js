@@ -4,7 +4,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import Settings from '../components/Settings';
 import Timer from '../components/Timer';
 import TopBar from '../components/TopBar';
-import defaultSettings from '../utils/defaultSettings';
+import { defaultSettings, colorTheme } from '../utils/defaultSettings';
 import MyButton from './MyButton';
 
 const Main = () => {
@@ -58,17 +58,27 @@ const Main = () => {
   } else {
     return (
       <View style={styles.container}>
-        <TopBar type={currentSessionType.name} />
-
-        <Text style={styles.currentSessionText}>{currentSessionType.text}</Text>
-
-        <Timer seconds={currentSessionType.minutes * 60} nextSession={nextSession} />
-
-        <MyButton
-          title="Settings"
-          accessibilityLabel="Set session timers"
-          onPress={toggleSettings}
-        />
+        <View style={styles.first}>
+          <TopBar type={currentSessionType.name} />
+        </View>
+        <View style={styles.second}>
+          <Text style={styles.currentSessionText}>{currentSessionType.text}</Text>
+        </View>
+        <View style={styles.third}>
+          <Timer
+            style={styles.timerstyle}
+            seconds={currentSessionType.minutes * 60}
+            nextSession={nextSession}
+          />
+        </View>
+        <View style={styles.fourth}>
+          <MyButton
+            style={styles.button}
+            title="Settings"
+            accessibilityLabel="Set session timers"
+            onPress={toggleSettings}
+          />
+        </View>
       </View>
     );
   }
@@ -76,14 +86,32 @@ const Main = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colorTheme.LavenderWeb,
     alignItems: 'center',
     justifyContent: 'center',
+    height: '100%',
   },
   currentSessionText: {
-    fontSize: 60,
+    fontSize: 50,
+    color: colorTheme.Gunmetal,
   },
+  button: {
+    marginBottom: 0,
+  },
+  first: {
+    flex: 2,
+    width: '100%',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  second: {
+    flex: 5,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  third: { flex: 8, width: '100%', alignItems: 'center' },
+  fourth: { flex: 1, width: '100%', alignItems: 'center' },
 });
 
 export default Main;

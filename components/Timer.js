@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import { secsInMmssString } from '../utils/Helper';
+import { colorTheme } from '../utils/defaultSettings';
 import MyButton from './MyButton';
 
 const Timer = ({ seconds, nextSession }) => {
@@ -64,9 +65,11 @@ const Timer = ({ seconds, nextSession }) => {
   };
 
   return (
-    <View>
-      <Text style={styles.timeLeftText}>{secsInMmssString(secondsLeft)}</Text>
-      <View>
+    <View style={styles.container}>
+      <View style={styles.box}>
+        <Text style={styles.timeLeftText}>{secsInMmssString(secondsLeft)}</Text>
+      </View>
+      <View style={styles.buttonStyles}>
         {paused ? startBtnJSX() : stopBtnJSX()}
 
         {skipBtnJSX()}
@@ -77,13 +80,29 @@ const Timer = ({ seconds, nextSession }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    width: '80%',
+    height: '100%',
+  },
+  timeLeftText: {
+    fontSize: 80,
+    color: colorTheme.Gunmetal,
+    flex: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  timeLeftText: {
-    fontSize: 60,
+  box: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 8,
+  },
+
+  buttonStyles: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    flex: 4,
   },
 });
 
