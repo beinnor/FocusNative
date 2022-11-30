@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TextInput } from 'react-native';
 
-import defaultSettings from '../utils/defaultSettings';
+import { defaultSettings, colorTheme } from '../utils/defaultSettings';
 import MyButton from './MyButton';
 
 const Settings = ({ toggleSettings, sessionTypes, updateSettings }) => {
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 40,
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colorTheme.SteelTeal,
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
@@ -79,18 +79,22 @@ const styles = StyleSheet.create({
   },
   topTitleText: {
     fontSize: 50,
+    color: colorTheme.Gunmetal,
   },
   subTitleText: {
     fontSize: 25,
     marginTop: 0,
     marginBottom: 50,
     paddingTop: 0,
+    color: colorTheme.Gunmetal,
   },
   titleText: {
     fontSize: 30,
+    color: colorTheme.Gunmetal,
   },
   timeText: {
     fontSize: 30,
+    color: colorTheme.Gunmetal,
   },
   input: {
     borderWidth: 1,

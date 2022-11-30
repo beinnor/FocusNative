@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+import { colorTheme } from '../utils/defaultSettings';
+
 const TopBar = ({ type }) => {
   return (
     <View style={styles.container}>
@@ -28,6 +30,7 @@ const TopBar = ({ type }) => {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 50,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -37,12 +40,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     margin: 5,
     padding: 5,
+    color: colorTheme.Gunmetal,
   },
   unmarked: {
     borderWidth: 0,
     fontSize: 20,
     margin: 5,
     padding: 5,
+    color: colorTheme.Gunmetal,
   },
 });
 

@@ -12,4 +12,12 @@ const defaultSettings = {
   },
 };
 
-export default defaultSettings;
+const colorTheme = {
+  Gunmetal: '#2a2d34',
+  LavenderWeb: '#e3dfff',
+  TerraCotta: '#e26d5a',
+  Cream: '#ffffc7',
+  SteelTeal: '#548687',
+};
+
+export { defaultSettings, colorTheme };
